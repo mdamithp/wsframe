@@ -1,0 +1,6 @@
+package web.servises;
+
+public class ConectionToRestWebService {
+	
+	
+}

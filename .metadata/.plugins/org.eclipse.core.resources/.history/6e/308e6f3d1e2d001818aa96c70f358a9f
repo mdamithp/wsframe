@@ -1,0 +1,56 @@
+package web.servises;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.Test;
+
+public class GetRequestRestApi {
+	URL url=URL("https://maps.googleapis.com/maps/api/timezone/json?");
+	
+	String Endpoint="https://maps.googleapis.com/maps/api/timezone/json?";
+	String Location="=40.908133%2C77.047119&";
+	String Timestamp="=1458000000&";
+	String Key="=AIzaSyB83bZRQTaDV_NVZoTQO52h6Z9eG0znCMI";
+	@Test
+	public void getRestResponce() throws ClientProtocolException, IOException{
+		HttpClient  client=HttpClientBuilder.create().build();
+		HttpGet request=new HttpGet(Endpoint+"location"+Location+"timestamp"+Timestamp+"key"+Key);
+		System.out.println(request);
+		//HttpPost
+		//HttpPut
+		//HttpDelete
+		HttpResponse response=client.execute(request);
+		//System.out.println(response.getEntity().toString());
+		System.out.println(response.getStatusLine().getStatusCode());
+	
+		BufferedReader br=new BufferedReader(new InputStreamReader(response.getEntity().getContent()) );
+		String line="";
+		StringBuffer sb=new StringBuffer();
+		while((line=br.readLine())!=null){
+			sb.append(line);
+		}
+		System.out.println(sb);
+		PrintWriter pw=new PrintWriter(System.getProperty("user.dir")+"//responcexml//firstRestTest.json");
+		pw.write(sb.toString());
+		pw.close();
+		pw.flush();
+		
+		
+	}
+	private URL URL(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

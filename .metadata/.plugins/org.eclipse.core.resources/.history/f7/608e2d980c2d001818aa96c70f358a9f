@@ -1,0 +1,14 @@
+package web.servises;
+
+import org.junit.Test;
+
+public class GetRequest {
+	
+	@Test
+	public void GetwebRequest(){
+		
+		
+	}
+	
+
+}

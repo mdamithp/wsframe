@@ -1,0 +1,26 @@
+package web.servises;
+
+import java.io.File;
+
+import javax.imageio.stream.FileImageInputStream;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.InputStreamEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+public class ConectionToWebService {
+	
+	String endpoint="http://www.webservicex.net/geoipservice.asmx";
+	
+	public void getSoapResponce(){
+		File requestfile=new File(System.getProperty("user.dir")+"//requestxml//FirstTest.xml");
+		HttpClient client=HttpClientBuilder.create().build();
+		HttpPost post=new HttpPost(endpoint);
+		post.setEntity(new InputStreamEntity(new FileImageInputStream(requestfile)));
+		
+	}
+	
+	
+
+}

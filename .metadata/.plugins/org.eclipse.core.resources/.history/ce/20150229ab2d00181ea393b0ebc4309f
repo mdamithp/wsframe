@@ -1,0 +1,29 @@
+package web.servises;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import static org.junit.Assert.*;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.Test;
+
+public class GetRequestRestApiTest {
+	
+	String Endpoint="https://maps.googleapis.com/maps/api/timezone/json?";
+	String Location="=40.908133%2C77.047119&";
+	String Timestamp="=1458000000&";
+	String Key="=AIzaSyB83bZRQTaDV_NVZoTQO52h6Z9eG0znCMI";
+	
+	GetRequestRestApi gr=new GetRequestRestApi();
+	@Test
+	public void getRestResponceTest(){
+		getRestResponce()
+	}
+	
+}

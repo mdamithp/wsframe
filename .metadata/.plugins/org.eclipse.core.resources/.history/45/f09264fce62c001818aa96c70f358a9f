@@ -1,0 +1,18 @@
+package web.servises;
+
+import java.io.File;
+
+import org.apache.http.client.HttpClient;
+
+public class ConectionToWebService {
+	
+	String endpoint="http://www.webservicex.net/geoipservice.asmx";
+	
+	public void getSoapResponce(){
+		File requestfile=new File(System.getProperty(key, def))
+		HttpClient 
+	}
+	
+	
+
+}

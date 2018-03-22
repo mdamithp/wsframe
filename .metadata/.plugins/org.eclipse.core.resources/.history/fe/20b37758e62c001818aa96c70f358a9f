@@ -1,0 +1,9 @@
+package web.servises;
+
+public class ConectionToWebService {
+	
+	String endpoint="http://www.webservicex.net/geoipservice.asmx";
+	
+	
+
+}

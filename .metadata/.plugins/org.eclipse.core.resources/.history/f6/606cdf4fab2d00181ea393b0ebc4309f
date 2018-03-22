@@ -1,0 +1,19 @@
+package web.servises;
+
+import org.junit.Test;
+
+public class GetRequestRestApiTest {
+	
+	String Endpoint="https://maps.googleapis.com/maps/api/timezone/json?";
+	String Location="=40.908133%2C77.047119&";
+	String Timestamp="=1458000000&";
+	String Key="=AIzaSyB83bZRQTaDV_NVZoTQO52h6Z9eG0znCMI";
+	
+	GetRequestRestApi gr=new GetRequestRestApi();
+	
+	@Test
+	public void getRestResponceTest(){
+		
+	}
+	
+}
